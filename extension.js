@@ -11,7 +11,7 @@ const Me = ExtensionUtils.getCurrentExtension();
 const Convenience = Me.imports.lib.convenience;
 const Slider = imports.ui.slider;
 
-let varDdcControlIndicator, initBrightness, device, address;
+let varDdcControlIndicator, initBrightness, device1, address1, device2, address2;
 
 function init() { 
 	let settings=Convenience.getSettings();
