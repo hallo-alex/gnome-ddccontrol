@@ -16,8 +16,10 @@ let varDdcControlIndicator, initBrightness, device, address;
 function init() { 
 	let settings=Convenience.getSettings();
 	initBrightness=settings.get_int("init-brightness")
-	device=settings.get_string("device")
-	address=settings.get_string("brightness-address")
+	device1=settings.get_string("device1")
+	address1=settings.get_string("brightness-address1")
+	device2=settings.get_string("device2")
+	address2=settings.get_string("brightness-address2")
 	setBrightness(initBrightness);
 }
 
@@ -27,7 +29,8 @@ function sliderChanged(slider, value, property) {
 }
 
 function setBrightness (value) {
-	Util.spawn(['ddccontrol', device, "-r", address, "-w" + value]);
+	Util.spawn(['ddccontrol', device1, "-r", address1, "-w" + value]);
+	Util.spawn(['ddccontrol', device2, "-r", address2, "-w" + value]);
 }
 
 const DdcControlIndicator = new Lang.Class({
