@@ -40,9 +40,18 @@ const DdcControlIndicator = new Lang.Class({
 	Extends: PanelMenu.Button,
 	_TimeoutId: null,
 	_FirstTimeoutId: null,
-
+//	_onEvent:  function() {
+	// 	switch (e.get_scroll_direction()) {
+	// 	case Clutter.ScrollDirection.UP:
+	// 			Slider.set_value(Slider.get_value()-10);
+	// 		case Clutter.ScrollDirection.DOWN:
+	// //			SlideDown
+	// 		default:
+	//
+	// 	}
+//	}
 	_init: function() {
-
+		log("init");
 		this.parent(0.0, "DdcControlIndicator");
 		Gtk.IconTheme.get_default().append_search_path(Me.dir.get_child('icons').get_path());
 
@@ -65,11 +74,11 @@ const DdcControlIndicator = new Lang.Class({
 	    panelSlider.actor.add(icon2);
 	    panelSlider.actor.add(slider.actor, { expand: true });
 
-	//	let settingsMenuItem = new PopupMenu.PopupMenuItem(_('Settings'));
+		//let settingsMenuItem = new PopupMenu.PopupMenuItem(_('Settings'));
 
 		this.menu.addMenuItem(panelSlider);
-	//	this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
-	//	this.menu.addMenuItem(settingsMenuItem);
+		// this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
+		// this.menu.addMenuItem(settingsMenuItem);
 
 
 		// Events
@@ -87,26 +96,12 @@ const DdcControlIndicator = new Lang.Class({
 function enable() {
 	varDdcControlIndicator = new DdcControlIndicator();
 	Main.panel.addToStatusArea('DdcControlIndicator', varDdcControlIndicator);
-  //Attempt to control the brightness via mouse scroll over the icon
-	//_onDdcControlIndicatorScrollEventId = varDdcControlIndicator.connect('scroll-event', _onDdcControlIndicatorScroll);
 
 
 }
 
 function disable() {
-//	if (_onDdcControlIndicatorScrollEventId)
-//		varDdcControlIndicator.indicators.disconnect(_onDdcControlIndicatorScrollEventId);
+
 	varDdcControlIndicator.destroy();
 
 }
-
-//function _onDdcControlIndicatorScroll(indicators, e){
-//	switch (e.get_scroll_direction()) {
-//	case Clutter.ScrollDirection.UP:
-//			Slider.set_value(Slider.get_value()-10);
-//		case Clutter.ScrollDirection.DOWN:
-//			SlideDown
-//		default:
-//
-//	}
-//}

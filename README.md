@@ -18,9 +18,10 @@ donload as zip and install via gnome-tweak-tool
 
 ## How to setup
 
-use ddccontrol in terminal (or gddccontrol) to find out your monitors adresses
+Use ddccontrol in terminal (or gddccontrol) to find out your monitors adresses
 
-as Preferences do not work (at least for me) I deleted it. Instead go to your gnome shell extensions directory (~/.local/share/gnome-shell/extensions), locate the extension and edit the org.gnome.shell.extensions.ddccontrol.gschema.xml in the schemas subdirectory according to the adresses you found.
+as Preferences did not work (at least for me) I tried to rewrite them, but the shitty thing doesn't even show up. Instead go to your gnome shell extensions directory (~/.local/share/gnome-shell/extensions), locate the extension and edit the org.gnome.shell.extensions.ddccontrol.gschema.xml in the schemas subdirectory according to the adresses you found and compile them with glib-compile-schemas .
+
 
 
 
@@ -29,3 +30,5 @@ as Preferences do not work (at least for me) I deleted it. Instead go to your gn
 Use gnome tweak tool to see whether the extension is really there and enabled.
 
 Use looking glass to see more details (ALT+F2 lg)
+
+
